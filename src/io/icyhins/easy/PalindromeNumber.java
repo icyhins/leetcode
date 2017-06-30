@@ -19,6 +19,16 @@ package io.icyhins.easy;
  */
 public class PalindromeNumber {
 
+    public static void main(String[] args){
+
+        int test = 123321;
+
+        System.out.print(palindromeNumber(test));
+
+
+
+    }
+
     /**
      *
      *  1. Negative num is NOT palindrome.
@@ -29,7 +39,7 @@ public class PalindromeNumber {
      *  then compare the new number is equal to original number or not
      *
      * */
-    private boolean palindromeNumber(int number){
+    private static boolean palindromeNumber(int number){
 
         if(number < 0){
             return false;
