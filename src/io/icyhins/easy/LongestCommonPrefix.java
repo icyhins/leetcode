@@ -9,10 +9,10 @@ public class LongestCommonPrefix {
 
     public static void main(String[] args){
 
-        String[] test = new String[3];
-        test[0] = "c";
-        test[1] = "c";
-        test[2] = "c";
+        String[] test = new String[1];
+        test[0] = "a";
+//        test[1] = "aa";
+//        test[2] = "aaa";
 //        test[3] = "helloSilver";
 //        test[4] = "helloCCB";
 
@@ -23,7 +23,7 @@ public class LongestCommonPrefix {
     /** This solution reduce first string to compare
      *  Until match the prefix
      * */
-    private static String longestCommonPrefix(String[] strs){
+    private static String longestCommonPrefix2(String[] strs){
         //Null check
         if(strs == null || strs.length == 0)    return "";
 
@@ -37,5 +37,33 @@ public class LongestCommonPrefix {
             i++;
         }
         return pre;
+    }
+
+    /**
+     * My solution, get char from first string 1 by 1, then compare with others.
+     * */
+    private static String longestCommonPrefix(String[] strings){
+
+        if(strings.length<=0){
+            return "";
+        }
+        String result = "";
+        //Input helloworlditsme,hellodavenice
+        //output hello
+        String firstStr = strings[0];
+        boolean isCommonPrefix = true;
+
+        String tmpPrefix = "";
+        for(int i = 0; i < firstStr.length(); i++){
+            tmpPrefix += String.valueOf(firstStr.charAt(i));
+            for(int j = 1; j < strings.length ; j++){
+                isCommonPrefix = strings[j].startsWith(tmpPrefix)?true:false;
+                if(!isCommonPrefix)break;
+            }
+            if(isCommonPrefix)result = tmpPrefix;
+
+        }
+
+        return result;
     }
 }
