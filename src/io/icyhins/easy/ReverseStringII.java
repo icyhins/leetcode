@@ -1,4 +1,4 @@
-package io.icyhins.easy.todo;
+package io.icyhins.easy;
 
 /**
  * Given a string and an integer k,
