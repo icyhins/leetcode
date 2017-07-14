@@ -31,110 +31,17 @@ public class Integer2Roman {
     }
 
 
-    public String solution(int i){
-        if(i<= 0 || i > 3999){
+    public String solution(int num){
+        if(num<= 0 || num > 3999){
             return "";
         }
 
-        StringBuilder sb = new StringBuilder();
-
         int tmp = 0 ;
-        //1. Thousand
-        if( i / 1000 != 0 ){
-            tmp = i / 1000;
-            switch (tmp){
-                case 1:sb.append("M");
-                    break;
-                case 2:sb.append("MM");
-                    break;
-                case 3:sb.append("MMM");
-                    break;
-            }
-            i = i % 1000;
-        }
+        String M[] = {"", "M", "MM", "MMM"};
+        String C[] = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+        String X[] = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+        String I[] = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
+        return M[num/1000] + C[(num%1000)/100]+ X[(num%100)/10] + I[num%10];
 
-        //2. Hundred
-        if( i / 100 != 0){
-            tmp = i / 100;
-            switch (tmp){
-                case 1:sb.append("C");
-                    break;
-                case 2:sb.append("CC");
-                    break;
-                case 3:sb.append("CCC");
-                    break;
-                case 4:sb.append("CD");
-                    break;
-                case 5:sb.append("D");
-                    break;
-                case 6:sb.append("DC");
-                    break;
-                case 7:sb.append("DCC");
-                    break;
-                case 8:sb.append("DCCC");
-                    break;
-                case 9:sb.append("CM");
-                    break;
-            }
-
-            i = i % 100;
-        }
-
-
-        //3. Ten
-        if( i / 10 != 0){
-            tmp = i / 10;
-            switch (tmp){
-                case 1:sb.append("X");
-                    break;
-                case 2:sb.append("XX");
-                    break;
-                case 3:sb.append("XXX");
-                    break;
-                case 4:sb.append("XL");
-                    break;
-                case 5:sb.append("L");
-                    break;
-                case 6:sb.append("LX");
-                    break;
-                case 7:sb.append("LXX");
-                    break;
-                case 8:sb.append("LXXX");
-                    break;
-                case 9:sb.append("XC");
-                    break;
-            }
-
-            i = i % 10;
-        }
-
-        //4. Digital
-        if( i  != 0){
-            tmp = i ;
-            switch (tmp){
-                case 1:sb.append("I");
-                    break;
-                case 2:sb.append("II");
-                    break;
-                case 3:sb.append("III");
-                    break;
-                case 4:sb.append("IV");
-                    break;
-                case 5:sb.append("V");
-                    break;
-                case 6:sb.append("VI");
-                    break;
-                case 7:sb.append("VII");
-                    break;
-                case 8:sb.append("VIII");
-                    break;
-                case 9:sb.append("IX");
-                    break;
-            }
-
-            i = i % 10;
-        }
-
-        return sb.toString();
     }
 }
