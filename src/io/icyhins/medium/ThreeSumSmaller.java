@@ -34,7 +34,6 @@ public class ThreeSumSmaller {
         int result  = 0;
 
         for(int i = 0; i < nums.length -2; i++){
-            if(i==0 || (i>0 && nums[i]!=nums[i-1])){//Duplicated nums handle
                 int start = i+1;
                 int end = nums.length - 1;
                 while(start < end ){
@@ -43,15 +42,11 @@ public class ThreeSumSmaller {
                         end--;
                     }else{
                         result += end - start;// all nums from end to start is match.
-                        //Duplicated nums handle
-                        while (start < end && nums[start] == nums[start+1]) start++;
-                        while (start < end && nums[end] == nums[end-1]) end--;
                         //Move start pointers
                         start++;
                     }
 
                 }
-            }
 
         }
 
