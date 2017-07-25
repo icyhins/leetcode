@@ -1,7 +1,7 @@
 package io.icyhins.util;
 
 /**
- * Created by icyhins on 2017/7/4.
+ * Definition for a list node.
  */
 public class ListNode {
     public ListNode next;
