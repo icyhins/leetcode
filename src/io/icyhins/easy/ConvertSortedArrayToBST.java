@@ -3,7 +3,8 @@ package io.icyhins.easy;
 import io.icyhins.util.TreeNode;
 
 /**
- * Created by icyhins on 2017/7/30.
+ * Given an array where elements are sorted in ascending order,
+ * convert it to a height balanced Binary Search Tree.
  */
 public class ConvertSortedArrayToBST {
 
