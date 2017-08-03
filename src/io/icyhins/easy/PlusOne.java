@@ -22,6 +22,11 @@ public class PlusOne {
         System.out.println(Arrays.toString(obj.plusOne(digits)));
     }
 
+    /**
+     * Solution Main Idea:
+     * seek from the array end digit.
+     * for any 9 , carry on, else plus 1 & return.
+     * */
     public int[] plusOne(int[] digits) {
         int len = digits.length;
         for (int i = len - 1; i >= 0; --i) {
