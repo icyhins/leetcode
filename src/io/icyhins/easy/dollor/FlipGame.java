@@ -35,13 +35,15 @@ public class FlipGame {
      *
      * */
     public List<String> flipGame(String s){
-        int i = 1;
+        int i = 1;//Start from 2nd char
 
         List<String> result = new ArrayList<>();
         while (i< s.length()){
+            //Judge same as pre char
             if(s.charAt(i-1) == '+' && s.charAt(i) == '+'){
                 char[] chS = s.toCharArray();
-                chS[i]= '-';chS[i-1]= '-';
+                chS[i]= '-';
+                chS[i-1]= '-';
                 result.add(new String(chS));
             }
             i++;
