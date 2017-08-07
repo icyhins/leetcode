@@ -22,7 +22,7 @@ public class UniquePaths {
     public static void main(String[] args){
         UniquePaths up = new UniquePaths();
         long start = new Date().getTime();
-        System.out.println(up.uniquePaths2(23,12));
+        System.out.println(up.uniquePaths2(100,100));
         long end = new Date().getTime();
         System.out.println(end-start);
     }
@@ -49,33 +49,6 @@ public class UniquePaths {
      *  so we can see there are 2 paths to [1,1], 1 path to [0,2],
      *  and total (2+1)=3 paths to [1,2]
      *
-     *  so I use recursion, path(i,j) = path(i,j-1) + path(i-,j)
-     *
-     *  Space is O(1), but TLE in leetcode
-     *
-     * **/
-    public int uniquePaths(int m, int n) {
-        return path(m-1,n-1);
-    }
-
-    //Location path
-    private int path(int i, int j){
-        int result = 0;
-        //Start point
-        if(i == 0 && j == 0){
-            result =  1;
-        }else if (i == 0 && j != 0){
-            result =  path(0,j-1);
-        }else if (i != 0 && j == 0){
-            result =  path(i-1,0);
-        }else{
-            result = path(i,j-1) + path(i-1,j);
-        }
-        return result;
-    }
-
-
-    /**
      * This solution use a array to store the total result
      * so Space is O(n*m), Time is  O(n*m)
      * */
