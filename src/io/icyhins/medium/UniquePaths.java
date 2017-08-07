@@ -22,7 +22,7 @@ public class UniquePaths {
     public static void main(String[] args){
         UniquePaths up = new UniquePaths();
         long start = new Date().getTime();
-        System.out.println(up.uniquePaths2(100,100));
+        System.out.println(up.uniquePaths(23,12));
         long end = new Date().getTime();
         System.out.println(end-start);
     }
@@ -52,7 +52,7 @@ public class UniquePaths {
      * This solution use a array to store the total result
      * so Space is O(n*m), Time is  O(n*m)
      * */
-    public int uniquePaths2(int m, int n) {
+    public int uniquePaths(int m, int n) {
         Integer[][] map = new Integer[m][n];
         for(int i = 0; i<m;i++){
             map[i][0] = 1;
