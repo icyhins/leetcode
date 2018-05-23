@@ -1,4 +1,4 @@
-package io.icyhins.util;
+package io.icyhins.model;
 
 /**
  * Created by icyhins on 2017/8/4.

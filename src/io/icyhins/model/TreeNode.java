@@ -1,4 +1,4 @@
-package io.icyhins.util;
+package io.icyhins.model;
 
 /**
  * Definition for a binary tree node.
