@@ -36,6 +36,7 @@ import java.util.*;
  * 
  * string convert(string text, int nRows); convert("PAYPALISHIRING", 3) should
  * return "PAHNAPLSIIGYIR".
+ * @author Silver.Kan
  */
 public class ZigZagConversion {
 

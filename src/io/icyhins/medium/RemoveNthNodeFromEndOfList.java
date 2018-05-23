@@ -1,6 +1,6 @@
 package io.icyhins.medium;
 
-import io.icyhins.util.ListNode;
+import io.icyhins.model.ListNode;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -16,6 +16,7 @@ import java.util.Deque;
  * Note:
  * Given n will always be valid.
  * Try to do this in one pass.
+ * @author Silver.Kan
  */
 public class RemoveNthNodeFromEndOfList {
 
@@ -25,7 +26,7 @@ public class RemoveNthNodeFromEndOfList {
 
         Deque<ListNode> queue = new ArrayDeque<>();
 
-        ListNode dummy = new ListNode("0");
+        ListNode dummy = new ListNode(0);
         dummy.next = head;
         ListNode pointer = dummy;
         while(pointer!= null){
@@ -40,7 +41,8 @@ public class RemoveNthNodeFromEndOfList {
             pointer = pointer.next;
         }
 
-        pointer = queue.getFirst();//L(N-n)
+        //L(N-n)
+        pointer = queue.getFirst();
         if(pointer.next!=null){
             pointer.next = pointer.next.next;
         }
@@ -51,15 +53,15 @@ public class RemoveNthNodeFromEndOfList {
     public static void main(String[] args){
         RemoveNthNodeFromEndOfList obj = new RemoveNthNodeFromEndOfList();
 
-        ListNode head = new ListNode("1");
-        head.next = new ListNode("2");
-        head.next.next = new ListNode("3");
-        head.next.next.next = new ListNode("4");
-        head.next.next.next.next = new ListNode("5");
-        head.next.next.next.next.next = new ListNode("6");
-        head.next.next.next.next.next.next = new ListNode("7");
-        head.next.next.next.next.next.next.next = new ListNode("8");
-        head.next.next.next.next.next.next.next.next = new ListNode("9");
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
+        head.next.next.next.next.next = new ListNode(6);
+        head.next.next.next.next.next.next = new ListNode(7);
+        head.next.next.next.next.next.next.next = new ListNode(8);
+        head.next.next.next.next.next.next.next.next = new ListNode(9);
 
 
         int n = 1;

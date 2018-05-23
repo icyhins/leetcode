@@ -9,6 +9,7 @@ package io.icyhins.medium;
  * Both num1 and num2 contains only digits 0-9.
  * Both num1 and num2 does not contain any leading zero.
  * You must not use any built-in BigInteger library or convert the inputs to integer directly.
+ * @author Silver.Kan
  */
 public class MultiplyStrings {
 
@@ -65,12 +66,13 @@ public class MultiplyStrings {
             }
         }
 
-
         StringBuilder sb = new StringBuilder();
-        for(int p : pos)
+        for(int p : pos){
             //In case leading '0'
-            if(!(sb.length() == 0 && p == 0))
+            if(!(sb.length() == 0 && p == 0)) {
                 sb.append(p);
+            }
+        }
 
         return sb.length() == 0 ? "0" : sb.toString();
 

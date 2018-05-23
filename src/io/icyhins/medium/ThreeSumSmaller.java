@@ -15,6 +15,7 @@ import java.util.Arrays;
  * [-2, 0, 3]
  *
  * Follow up: Could you solve it in O(n^2) runtime?
+ * @author Silver.Kan
  */
 public class ThreeSumSmaller {
 

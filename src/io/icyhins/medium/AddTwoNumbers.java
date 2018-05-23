@@ -1,5 +1,7 @@
 package io.icyhins.medium;
 
+import io.icyhins.model.ListNode;
+
 /**
  * You are given two non-empty linked lists representing two non-negative
  * integers. The digits are stored in reverse order and each of their nodes
@@ -9,6 +11,7 @@ package io.icyhins.medium;
  * number 0 itself.
  * 
  * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4) Output: 7 -> 0 -> 8
+ * @author Silver.Kan
  */
 public class AddTwoNumbers {
 
@@ -28,11 +31,11 @@ public class AddTwoNumbers {
 		// Over flow part
 		int overflow = 0;
 		while (l1 != null || l2 != null) {
-			int l1val = l1 == null ? 0 : l1.val;
-			int l2val = l2 == null ? 0 : l2.val;
+			int l1val = l1 == null ? 0 : l1.value;
+			int l2val = l2 == null ? 0 : l2.value;
 			int tmpInt = l1val + l2val + overflow;
 			// Only get the unit digit
-			tmpl.val = tmpInt >= 10 ? tmpInt % 10 : tmpInt;
+			tmpl.value = tmpInt >= 10 ? tmpInt % 10 : tmpInt;
 			//
 			overflow = tmpInt >= 10 ? tmpInt / 10 : 0;
 
@@ -134,9 +137,9 @@ public class AddTwoNumbers {
 		while (rl != null) {
 
 			if (rl.next != null) {
-				System.out.printf("%s->", rl.val);
+				System.out.printf("%s->", rl.value);
 			} else {
-				System.out.println(rl.val);
+				System.out.println(rl.value);
 			}
 			rl = rl.next;
 
@@ -145,14 +148,3 @@ public class AddTwoNumbers {
 
 }
 
-/**
- * Definition for singly-linked list.
- */
-class ListNode {
-	int val;
-	ListNode next;
-
-	ListNode(int x) {
-		val = x;
-	}
-}

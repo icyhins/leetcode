@@ -12,6 +12,7 @@ import java.util.Deque;
  *
  * ["2", "1", "+", "3", "*"] -> ((2 + 1) * 3) -> 9
  * ["4", "13", "5", "/", "+"] -> (4 + (13 / 5)) -> 6
+ * @author Silver.Kan
  */
 public class EvaluateReversePolishNotation {
     /**

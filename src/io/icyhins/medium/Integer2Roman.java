@@ -5,6 +5,7 @@ package io.icyhins.medium;
  * convert it to a roman numeral.
  *
  * Input is guaranteed to be within the range from 1 to 3999.
+ * @author Silver.Kan
  */
 public class Integer2Roman {
 

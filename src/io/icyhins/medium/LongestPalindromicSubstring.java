@@ -15,11 +15,13 @@ package io.icyhins.medium;
  * Input: "cbbd"
  * 
  * Output: "bb"
- * 
+ *
+ * @author Silver.Kan
  */
 public class LongestPalindromicSubstring {
 
 	private static String longestPalindrome(String s) {
+	    // TODO
 		return null;
 	}
 }

@@ -1,12 +1,13 @@
 package io.icyhins.medium;
 
-import io.icyhins.util.ListNode;
-import io.icyhins.util.TreeNode;
+import io.icyhins.model.ListNode;
+import io.icyhins.model.TreeNode;
 
 
 /**
  * Given a singly linked list where elements are sorted in ascending order,
  * convert it to a height balanced Binary Search Tree.
+ * @author Silver.Kan
  */
 public class ConvertSortedListToBST {
 
@@ -52,18 +53,20 @@ public class ConvertSortedListToBST {
         if(head == null){
             return null;
         }else if(head.next == null){
-            return new TreeNode(head.val);
+            return new TreeNode(head.value);
         }
 
         ListNode fast = head;
         ListNode slow = head;
         TreeNode root ;
 
-        ListNode dummy = slow;//dummy node point to slow.next head
+        //dummy node point to slow.next head
+        ListNode dummy = slow;
 
         while (fast.next != null && fast.next.next != null){
             fast = fast.next.next;
-            dummy  = slow; //dummy node point to slow.next head
+            //dummy node point to slow.next head
+            dummy  = slow;
             slow = slow.next;
 
         }
@@ -71,7 +74,7 @@ public class ConvertSortedListToBST {
         //Remove the root from list & break the list
         dummy.next = null;
 
-        root = new TreeNode(slow.val);
+        root = new TreeNode(slow.value);
 
         ListNode lHead = head;
         ListNode rHead = slow.next;

@@ -15,15 +15,16 @@ import java.util.Date;
  * Above is a 3 x 7 grid. How many possible unique paths are there?
  *
  *
- Note: m and n will be at most 100.
+ * Note: m and n will be at most 100.
+ * @author Silver.Kan
  */
 public class UniquePaths {
 
     public static void main(String[] args){
         UniquePaths up = new UniquePaths();
-        long start = new Date().getTime();
+        long start = System.currentTimeMillis();
         System.out.println(up.uniquePaths(23,12));
-        long end = new Date().getTime();
+        long end = System.currentTimeMillis();
         System.out.println(end-start);
     }
 
