@@ -1,6 +1,6 @@
 package io.icyhins.easy;
 
-import io.icyhins.util.ListNode;
+import io.icyhins.model.ListNode;
 
 
 /**
@@ -52,8 +52,12 @@ public class MergeTwoSortedLists {
      * Recursion solution
      * */
     public ListNode mergeTwoListsR(ListNode l1, ListNode l2) {
-        if (l1 == null) return l2;
-        if (l2 == null) return l1;
+        if (l1 == null) {
+            return l2;
+        }
+        if (l2 == null) {
+            return l1;
+        }
         ListNode head = (l1.val < l2.val) ? l1 : l2;
         ListNode nonhead = (l1.val < l2.val) ? l2 : l1;
         head.next = mergeTwoListsR(head.next, nonhead);
@@ -64,8 +68,12 @@ public class MergeTwoSortedLists {
      * Recursion solution 2
      * */
     public ListNode mergeTwoListsR2(ListNode l1, ListNode l2) {
-        if (l1 == null) return l2;
-        if (l2 == null) return l1;
+        if (l1 == null) {
+            return l2;
+        }
+        if (l2 == null) {
+            return l1;
+        }
         if (l1.val < l2.val) {
             l1.next = mergeTwoListsR2(l1.next, l2);
             return l1;
