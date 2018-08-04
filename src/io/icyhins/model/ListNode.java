@@ -5,14 +5,14 @@ package io.icyhins.model;
  */
 public class ListNode {
     public ListNode next;
-    public int value;
+    public int val;
 
-    public ListNode(int value){
-        this.value = value;
+    public ListNode(int val){
+        this.val = val;
     }
 
     @Override
     public String toString(){
-        return String.valueOf(value);
+        return String.valueOf(val);
     }
 }
